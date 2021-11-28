@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.automated.testing.tests.RozetkaProductsListPageTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-11-28T12:10:13" hostname="andrii-k53sd" time="41.862">
+  <properties/>
+  <testcase name="Should show products in large tiles" classname="com.example.automated.testing.tests.RozetkaProductsListPageTests" time="11.068"/>
+  <testcase name="Should add product to comparison list" classname="com.example.automated.testing.tests.RozetkaProductsListPageTests" time="8.023"/>
+  <testcase name="Should load more products" classname="com.example.automated.testing.tests.RozetkaProductsListPageTests" time="9.787"/>
+  <testcase name="Should show products in small tiles" classname="com.example.automated.testing.tests.RozetkaProductsListPageTests" time="5.954"/>
+  <testcase name="Should add product to cart" classname="com.example.automated.testing.tests.RozetkaProductsListPageTests" time="6.975"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
