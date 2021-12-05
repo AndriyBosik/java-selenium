@@ -1,6 +1,7 @@
-package com.example.automated.testing.pages;
+package com.example.automated.testing.page.object;
 
 import com.example.automated.testing.config.SeleniumConfig;
+import com.example.automated.testing.page.RozetkaHomePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,8 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class RozetkaHomePage {
+public class RozetkaHomePageObject {
     private final WebDriver driver = SeleniumConfig.getInstance().getWebDriver();
+    private final RozetkaHomePage page = new RozetkaHomePage();
 
     @Step("Open Rozetka Home Page")
     public void open() {
@@ -19,17 +21,17 @@ public class RozetkaHomePage {
 
     @Step("Type {searchQuery} text in search box")
     public void typeSearchQuery(String searchQuery) {
-        driver.findElement(new By.ByName("search")).sendKeys(searchQuery);
+        page.getSearchField().sendKeys(searchQuery);
     }
 
     @Step("Click search button")
     public void startSearch() {
-        driver.findElement(new By.ByCssSelector(".search-form .search-form__submit")).click();
+        page.getSearchButton().click();
     }
 
     @Step("Get page header")
     public String getPageHeader() {
-        String text = driver.findElement(new By.ByCssSelector("h1.catalog-heading")).getText();
+        String text = page.getPageHeader().getText();
         return text.substring(1, text.length() - 1);
     }
     
@@ -40,6 +42,6 @@ public class RozetkaHomePage {
     }
 
     public String getFirstCatalogProductTitle() {
-        return driver.findElement(new By.ByCssSelector("ul.catalog-grid li")).findElement(new By.ByCssSelector(".goods-tile__title")).getText();
+        return page.getFirstCatalogProductTitleElement().getText();
     }
 }

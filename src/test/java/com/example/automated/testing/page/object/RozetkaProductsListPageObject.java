@@ -1,6 +1,7 @@
-package com.example.automated.testing.pages;
+package com.example.automated.testing.page.object;
 
 import com.example.automated.testing.config.SeleniumConfig;
+import com.example.automated.testing.page.RozetkaProductsListPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,8 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class RozetkaProductsListPage {
+public class RozetkaProductsListPageObject {
     private final WebDriver driver = SeleniumConfig.getInstance().getWebDriver();
+    private final RozetkaProductsListPage page = new RozetkaProductsListPage();
 
     @Step("Open Rozetka Products List Page")
     public void open() {
@@ -19,47 +21,47 @@ public class RozetkaProductsListPage {
 
     @Step("Click small tiles button")
     public void clickSmallTiles() {
-        driver.findElement(new By.ByCssSelector("[title='Мала плитка']")).click();
+        page.getSmallTilesButton().click();
     }
 
     @Step("Click large tiles button")
     public void clickLargeIcons() {
-        driver.findElement(new By.ByCssSelector("[title='Крупна плитка']")).click();
+        page.getLargeTilesButton().click();
     }
 
     @Step("Check whatever tiles is small")
     public boolean isSmallTiles() {
-        return driver.findElement(new By.ByCssSelector(".catalog-grid__cell")).getAttribute("class").contains("catalog-grid__cell_type_slim");
+        return page.getFirstCatalogItem().getAttribute("class").contains("catalog-grid__cell_type_slim");
     }
 
     @Step("Click BUY PRODUCT button")
     public void buyProduct() {
-        driver.findElement(new By.ByCssSelector(".goods-tile .buy-button")).click();
+        page.getFirstCatalogItemBuyButton().click();
     }
 
     @Step("Click COMPARE PRODUCT button")
     public void addToComparisonList() {
-        driver.findElement(new By.ByCssSelector(".goods-tile .compare-button")).click();
+        page.getFirstCatalogItemCompareButton().click();
     }
 
     @Step("Get cart items count")
     public int getCartProductsCount() {
-        return Integer.parseInt(driver.findElement(new By.ByCssSelector("button[opencart] span.counter")).getText().strip());
+        return Integer.parseInt(page.getCartCounter().getText().strip());
     }
 
     @Step("Get comparison items count")
     public int getComparisonListProductsCount() {
-        return Integer.parseInt(driver.findElement(new By.ByCssSelector("rz-comparison span.counter")).getText().strip());
+        return Integer.parseInt(page.getComparisonListCounter().getText().strip());
     }
 
     @Step("Get visible catalog products count")
     public int getVisibleCatalogProductsCount() {
-        return driver.findElements(new By.ByCssSelector("ul.catalog-grid li")).size();
+        return page.getProductsList().size();
     }
 
     @Step("Click SHOW MORE button")
     public void clickShowMoreButton() {
-        driver.findElement(new By.ByCssSelector("a.show-more")).click();
+        page.getShowMoreButton().click();
     }
 
     @Step("Wait catalog to load more items")
