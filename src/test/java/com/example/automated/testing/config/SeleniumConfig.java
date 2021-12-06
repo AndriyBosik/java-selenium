@@ -1,5 +1,6 @@
 package com.example.automated.testing.config;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -9,7 +10,7 @@ public class SeleniumConfig {
     private final WebDriver webDriver;
 
     private SeleniumConfig() {
-        System.setProperty("webdriver.chrome.driver", "/home/andrii/Data/Drivers/ChromeDriver/chromedriver");
+        WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
     }
 

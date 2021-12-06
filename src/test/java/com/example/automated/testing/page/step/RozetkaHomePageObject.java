@@ -1,4 +1,4 @@
-package com.example.automated.testing.page.object;
+package com.example.automated.testing.page.step;
 
 import com.example.automated.testing.config.SeleniumConfig;
 import com.example.automated.testing.page.RozetkaHomePage;

@@ -1,4 +1,4 @@
-package com.example.automated.testing.page.object;
+package com.example.automated.testing.page.step;
 
 import com.example.automated.testing.config.SeleniumConfig;
 import com.example.automated.testing.page.RozetkaProductsListPage;
@@ -66,7 +66,7 @@ public class RozetkaProductsListPageObject {
 
     @Step("Wait catalog to load more items")
     public void waitToLoad() {
-        WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(15));
         driverWait.until(ExpectedConditions.presenceOfElementLocated(new By.ByCssSelector("ul.preloader_type_element")));
     }
 

@@ -1,6 +1,6 @@
 package com.example.automated.testing.tests;
 
-import com.example.automated.testing.page.object.RozetkaHomePageObject;
+import com.example.automated.testing.page.step.RozetkaHomePageObject;
 import io.qameta.allure.Epic;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Epic("Rozetka Home Page")
-public class RozetkaHomePageTests {
+public class RozetkaHomePageTest {
     private final RozetkaHomePageObject rozetkaHomePageObject = new RozetkaHomePageObject();
 
     @Test

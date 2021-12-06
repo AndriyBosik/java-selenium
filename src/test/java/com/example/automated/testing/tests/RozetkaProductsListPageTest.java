@@ -1,6 +1,6 @@
 package com.example.automated.testing.tests;
 
-import com.example.automated.testing.page.object.RozetkaProductsListPageObject;
+import com.example.automated.testing.page.step.RozetkaProductsListPageObject;
 import io.qameta.allure.Epic;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Epic("Rozetka Products List Page")
-public class RozetkaProductsListPageTests {
+public class RozetkaProductsListPageTest {
     private final RozetkaProductsListPageObject rozetkaProductsListPageObject = new RozetkaProductsListPageObject();
 
     @Test
